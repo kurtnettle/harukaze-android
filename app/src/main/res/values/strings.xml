@@ -1,0 +1,23 @@
+<resources>
+    <string name="about">About</string>
+    <string name="app_name">Harukaze</string>
+    <string name="app_name_meaning">Spring Breeze</string>
+    <string name="app_version">App Version</string>
+    <string name="dialogue_automation_text">Yes, I spend over 6 hours automating a 6-second task.</string>
+    <string name="dialogue_intake_text">I\'m from intake 49!</string>
+    <string name="dialogue_username_text">a.k.a Shaikh Shafeen</string>
+    <string name="dumb">Dumb</string>
+    <string name="theme_mode_label">Theme Mode</string>
+    <string name="theme_mode_desc">Select interface appearance. Currently only Dark mode is stable.</string>
+    <string name="enable_dynamic_color_label">Use dynamic colors</string>
+    <string name="enable_dynamic_color_desc">Apply system-generated colors based on your wallpaper to customize the app’s appearance.</string>
+    <string name="enable_webview_desc">Shows web content directly within the app. It is currently in beta.</string>
+    <string name="enable_webview_label">Enable in-app WebView</string>
+    <string name="enable_topbar_anim_label">Enable animated top bar</string>
+    <string name="enable_topbar_anim_desc">Animates the app name and its translation on the top bar</string>
+    <string name="home">Home</string>
+    <string name="meh">meh</string>
+    <string name="okay">Okay</string>
+    <string name="project_last_updated">Projects last updated</string>
+    <string name="url_copied_to_clipboard">URL copied to clipboard</string>
+</resources>
