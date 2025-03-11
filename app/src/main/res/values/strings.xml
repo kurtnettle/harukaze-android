@@ -18,6 +18,8 @@
     <string name="home">Home</string>
     <string name="meh">meh</string>
     <string name="okay">Okay</string>
+    <string name="file_saved_success">%1$s saved to Downloads folder</string>
+    <string name="file_saved_error">Failed to save the %1$s to Downloads folder</string>
     <string name="project_last_updated">Projects last updated</string>
     <string name="url_copied_to_clipboard">URL copied to clipboard</string>
 </resources>
