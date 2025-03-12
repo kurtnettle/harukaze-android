@@ -1,14 +1,14 @@
 package com.kurtnettle.harukaze.utils
 
 fun isNewerAppVersion(latest: String, current: String): Boolean {
+    val cleanLatest = latest.removePrefix("v").removeSuffix("-DEBUG")
+    val cleanCurrent = current.removePrefix("v").removeSuffix("-DEBUG")
 
-    val latestParts = latest.split(".").map { it.toIntOrNull() ?: 0 }
-    val currentParts = current.split(".").map { it.toIntOrNull() ?: 0 }
+    val latestParts = cleanLatest.split(".").map { it.toIntOrNull() ?: 0 }
+    val currentParts = cleanCurrent.split(".").map { it.toIntOrNull() ?: 0 }
 
-    for (i in latestParts.indices) {
-        if (i >= currentParts.size || latestParts[i] > currentParts[i]) return true
-        if (latestParts[i] < currentParts[i]) return false
-    }
+    if (latestParts[0] > currentParts[0]) return true
+    if (latestParts[0] < currentParts[0]) return false
 
-    return false
+    return latestParts.getOrElse(1) { 0 } > currentParts.getOrElse(1) { 0 }
 }
