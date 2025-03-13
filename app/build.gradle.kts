@@ -13,8 +13,8 @@ android {
         applicationId = "com.kurtnettle.harukaze"
         minSdk = 27
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 4
+        versionName = "1.3"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -79,6 +79,7 @@ dependencies {
     implementation(libs.koin.androidx.compose)
     implementation(project.dependencies.platform(libs.koin.bom))
     implementation(libs.koin.core)
+    implementation(libs.androidx.webkit)
 
     // Testing
     testImplementation(libs.junit)

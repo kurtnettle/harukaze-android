@@ -22,15 +22,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.kurtnettle.harukaze.R
-import com.kurtnettle.harukaze.SnackbarController
 import com.kurtnettle.harukaze.presentation.home.openUrl
+import com.kurtnettle.harukaze.utils.copyToClipboard
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -54,14 +51,13 @@ fun FullScreenWebViewTopBar(
                         shape = RoundedCornerShape(8.dp)
                     )
                     .clickable {
-                        try {
-                            clipboard.setText(AnnotatedString(currentUrl))
-                            coroutineScope.launch {
-                                SnackbarController.sendInfo(context.getString(R.string.url_copied_to_clipboard))
-                            }
-                        } catch (e: Exception) {
-                            Timber.e(e, "Failed to copy URL to clipboard: ${e.message}")
-                        }
+                        copyToClipboard(
+                            context = context,
+                            coroutineScope = coroutineScope,
+                            clipboard = clipboard,
+                            text = currentUrl,
+
+                            )
                     }
                     .padding(horizontal = 8.dp, vertical = 4.dp)) {
                 Text(

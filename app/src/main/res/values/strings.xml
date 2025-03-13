@@ -21,5 +21,7 @@
     <string name="file_saved_success">%1$s saved to Downloads folder</string>
     <string name="file_saved_error">Failed to save the %1$s to Downloads folder</string>
     <string name="project_last_updated">Projects last updated</string>
-    <string name="url_copied_to_clipboard">URL copied to clipboard</string>
+    <string name="webview_version">WebView Version</string>
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="failed_copied_to_clipboard">Failed to copy to clipboard</string>
 </resources>
