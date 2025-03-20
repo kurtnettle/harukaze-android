@@ -43,6 +43,7 @@ import com.kurtnettle.harukaze.data.repository.DataManager
 import kotlinx.coroutines.CoroutineScope
 import org.koin.compose.koinInject
 import timber.log.Timber
+import java.net.URL
 
 
 @Composable
@@ -147,7 +148,15 @@ private fun createConfiguredWebView(
                 view: WebView, request: WebResourceRequest
             ): Boolean {
                 val url = request.url.toString()
-                return if (url.startsWith("http", true)) {
+
+                val initialUrlHost = try {
+                    URL(initialUrl).host
+                } catch (e: Exception) {
+                    Timber.e(e, "Invalid initialUrl: $initialUrl")
+                    return false
+                }
+
+                return if (initialUrlHost == request.url.host) {
                     false
                 } else {
                     try {
